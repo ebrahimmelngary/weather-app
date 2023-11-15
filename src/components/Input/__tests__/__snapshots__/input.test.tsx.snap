@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should match snapshot 1`] = `
+<TextInput
+  style={
+    {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 5,
+      "padding": 10,
+    }
+  }
+  testID="custom-input"
+/>
+`;

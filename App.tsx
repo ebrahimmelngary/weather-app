@@ -10,6 +10,7 @@ import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 
 import Home from './src/screens/home/home';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Toast from 'react-native-toast-message';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,6 +27,7 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <Home />
+      <Toast />
     </SafeAreaView>
   );
 }
