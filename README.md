@@ -5,8 +5,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 
 # Package are used
-    `"@react-native-async-storage/async-storage": "^1.19.5",
-    "axios": "^1.6.1",
+    `"axios": "^1.6.1",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-toast-message": "^2.1.7",
