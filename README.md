@@ -1,6 +1,16 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# DEMO
+![Simulator Screen Recording - iPhone 14 - 2023-11-15 at 22 31 44](https://github.com/ebrahimmelngary/weather-app/assets/26544537/b27c702f-c4e5-4e80-9225-42e1020896c1)
+
+
+# Package are used
+    `"@react-native-async-storage/async-storage": "^1.19.5",
+    "axios": "^1.6.1",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-toast-message": "^2.1.7",
+    "use-debounce": "^10.0.0"`
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
