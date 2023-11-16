@@ -8,7 +8,7 @@ instance.interceptors.request.use(
     return config;
   },
   function (error) {
-    Toast.show({type: 'error', text1: error.message});
+    Toast.show({ type: 'error', text1: error.message });
     return Promise.resolve(error);
   },
 );

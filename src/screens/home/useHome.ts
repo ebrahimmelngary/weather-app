@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AxiosResponse } from 'axios';
-import instance from '../../utils/axios';
 import { useDebounce } from 'use-debounce';
-import Toast from 'react-native-toast-message';
 
+import instance from '../../utils/axios';
 import { SearchResponse } from '../../types';
 import { Base_URL } from '../../api/api';
 
@@ -14,23 +13,21 @@ export const useHome = () => {
 
   const [debouncedSearchText] = useDebounce(searchText, 500);
 
-  const getCountryResult = async () =>
-    await instance
-      .get(`${Base_URL}&q=${searchText}`)
-      .then((res: AxiosResponse<SearchResponse>) => setResults(res));
-
   useEffect(() => {
     if (debouncedSearchText && debouncedSearchText?.length > 2) {
-      setIsLoading(true);
       try {
-        getCountryResult();
+        setIsLoading(true);
+        (async () =>
+          await instance
+            .get(`${Base_URL}&q=${searchText}`)
+            .then((res: AxiosResponse<SearchResponse>) => setResults(res)))();
         setIsLoading(false);
       } catch (error) {
-        Toast.show({ text1: error?.message || '', type: 'error' });
         setIsLoading(false);
       }
     }
-  }, [debouncedSearchText]);
+    setIsLoading(false);
+  }, [debouncedSearchText, searchText]);
 
   const newResultDates = useMemo(
     () =>
