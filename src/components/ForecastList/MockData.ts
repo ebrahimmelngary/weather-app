@@ -1,4 +1,3 @@
-import { Hour } from '../../types';
 
 export const MockData = [
   {

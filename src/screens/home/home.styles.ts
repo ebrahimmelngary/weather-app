@@ -19,13 +19,13 @@ export default StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingVertical: 50,
   },
   headerTextStyle: {
     fontWeight: 'bold',
     fontSize: 18,
     color: COLORS.white,
-    marginBottom: 8,
   },
   hourTextStyle: {
     color: COLORS.white,

@@ -6,29 +6,28 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
+import {StatusBar, View, useColorScheme} from 'react-native';
+import Toast from 'react-native-toast-message';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Home from './src/screens/home/home';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Toast from 'react-native-toast-message';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = {
     flexGrow: 1,
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <View style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <Home />
       <Toast />
-    </SafeAreaView>
+    </View>
   );
 }
 
