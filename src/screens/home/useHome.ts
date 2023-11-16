@@ -14,25 +14,23 @@ export const useHome = () => {
 
   const [debouncedSearchText] = useDebounce(searchText, 500);
 
-  const getCountryResult = useCallback(
-    async () =>
-      await instance
-        .get(`${Base_URL}&q=${searchText}`)
-        .then((res: AxiosResponse<SearchResponse>) => setResults(res)),
-    [searchText],
-  );
+  const getCountryResult = async () =>
+    await instance
+      .get(`${Base_URL}&q=${searchText}`)
+      .then((res: AxiosResponse<SearchResponse>) => setResults(res));
 
   useEffect(() => {
     if (debouncedSearchText && debouncedSearchText?.length > 2) {
       setIsLoading(true);
       try {
         getCountryResult();
+        setIsLoading(false);
       } catch (error) {
         Toast.show({ text1: error?.message || '', type: 'error' });
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
-  }, [debouncedSearchText, getCountryResult, searchText]);
+  }, [debouncedSearchText]);
 
   const newResultDates = useMemo(
     () =>

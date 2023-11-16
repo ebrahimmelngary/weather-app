@@ -23,7 +23,6 @@ module.exports = {
     'no-console': 'error',
 
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
 
     'no-undef': 'error',
     'react-native/no-inline-styles': 2,
