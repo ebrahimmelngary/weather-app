@@ -1,20 +1,23 @@
-import React, { FC, useCallback } from 'react';
-import { FlatList, Image, Text, View } from 'react-native';
+import React, {FC, useCallback} from 'react';
+import {FlatList, Image, Text, View} from 'react-native';
 
-import { Hour } from '../../types';
+import {Hour} from '../../types';
 import styles from './ForecastList.styles';
 
 type Props = {
   data: Hour[];
 };
 
-const ForecastList: FC<Props> = ({ data }) => {
+const ForecastList: FC<Props> = ({data}) => {
   const renderForecastItems = useCallback(
-    ({ item, index }: { item: Hour; index: number }) => {
+    ({item, index}: {item: Hour; index: number}) => {
       return (
-        <View key={index.toString()} style={styles.cardStyle} testID='forecast-item'>
+        <View
+          key={index.toString()}
+          style={styles.cardStyle}
+          testID="forecast-item">
           <Image
-            source={{ uri: 'https:' + item.condition.icon }}
+            source={{uri: 'https:' + item.condition.icon}}
             style={styles.imageStyle}
           />
           <Text>{item.condition.text}</Text>
@@ -39,7 +42,7 @@ const ForecastList: FC<Props> = ({ data }) => {
       columnWrapperStyle={styles.columnWrapperStyle}
       renderItem={renderForecastItems}
       keyExtractor={key_Extractor}
-      testID='ForecastList'
+      testID="ForecastList"
     />
   );
 };

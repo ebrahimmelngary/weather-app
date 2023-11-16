@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { COLORS } from '../../common/colors';
+import {StyleSheet} from 'react-native';
+
+import {COLORS} from '../../common/colors';
 
 export default StyleSheet.create({
   container: {
@@ -19,13 +20,13 @@ export default StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingVertical: 50,
   },
   headerTextStyle: {
     fontWeight: 'bold',
     fontSize: 18,
     color: COLORS.white,
-    marginBottom: 8,
   },
   hourTextStyle: {
     color: COLORS.white,
@@ -42,7 +43,7 @@ export default StyleSheet.create({
   },
   countryContainer: {
     padding: 16,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   countryTextStyle: {
     fontWeight: '500',
@@ -57,6 +58,6 @@ export default StyleSheet.create({
     color: COLORS.white,
   },
   loaderStyle: {
-    top: 25
+    top: 25,
   },
 });

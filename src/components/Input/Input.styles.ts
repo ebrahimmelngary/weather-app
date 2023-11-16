@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
-import { COLORS } from "../../common/colors";
+import {COLORS} from '../../common/colors';
 
 export default StyleSheet.create({
   textInputStyle: {
