@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import {AxiosResponse} from 'axios';
 import instance from '../../utils/axios';
 import {useDebounce} from 'use-debounce';
@@ -14,22 +14,25 @@ export const useHome = () => {
 
   const [debouncedSearchText] = useDebounce(searchText, 500);
 
-  const getCountryResult = async (searchText: string) =>
-    await instance
-      .get(`${Base_URL}&q=${searchText}`)
-      .then((res: AxiosResponse<SearchResponse>) => setResults(res));
+  const getCountryResult = useCallback(
+    async () =>
+      await instance
+        .get(`${Base_URL}&q=${searchText}`)
+        .then((res: AxiosResponse<SearchResponse>) => setResults(res)),
+    [searchText],
+  );
 
   useEffect(() => {
     if (debouncedSearchText && debouncedSearchText?.length > 2) {
       setIsLoading(true);
       try {
-        getCountryResult(searchText);
+        getCountryResult();
       } catch (error) {
         Toast.show({text1: error?.message || '', type: 'error'});
       }
       setIsLoading(false);
     }
-  }, [debouncedSearchText]);
+  }, [debouncedSearchText, getCountryResult, searchText]);
 
   const resultDates = useMemo(
     () =>

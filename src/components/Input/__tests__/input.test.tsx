@@ -15,9 +15,7 @@ describe('Input', () => {
   });
 
   it('renders with the provided style', () => {
-    const {getByTestId} = render(
-      <Input testID="custom-input" style={{padding: 10}} />,
-    );
+    const {getByTestId} = render(<Input testID="custom-input" />);
     const inputComponent = getByTestId('custom-input');
     expect(inputComponent.props.style).toEqual(
       expect.objectContaining({padding: 10}),

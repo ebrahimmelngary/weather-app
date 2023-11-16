@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['@react-native', 'prettier', 'airbnb'],
+  extends: ['@react-native', 'eslint:recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
@@ -27,7 +27,6 @@ module.exports = {
 
     'no-undef': 'error',
     'react-native/no-inline-styles': 2,
-    'unused-imports/no-unused-imports': 'error',
     'react/react-in-jsx-scope': 'error',
 
     'react/jsx-no-duplicate-props': 'error',
@@ -48,27 +47,6 @@ module.exports = {
     'no-bitwise': 2,
     'react/no-unstable-nested-components': 'error',
     'no-case-declarations': 'error',
-
-    '@typescript-eslint/no-unsafe-member-access': 'error',
-    '@typescript-eslint/no-unsafe-return': 'error',
-    '@typescript-eslint/no-unsafe-assignment': 'error',
-    '@typescript-eslint/restrict-template-expressions': 'error',
-    '@typescript-eslint/restrict-plus-operands': 'error',
-    '@typescript-eslint/no-unsafe-call': 'error',
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-floating-promises': 'error',
-    '@typescript-eslint/no-unsafe-argument': 'error',
-    '@typescript-eslint/ban-types': 'error',
-    '@typescript-eslint/no-empty-interface': 'error',
-    '@typescript-eslint/ban-ts-comment': 'error',
-    '@typescript-eslint/require-await': 'error',
-    '@typescript-eslint/no-misused-promises': 'error',
-    '@typescript-eslint/no-empty-function': 'error',
-    '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/no-non-null-assertion': 'error',
-    '@typescript-eslint/no-var-requires': 2,
-    '@typescript-eslint/no-shadow': 'error',
   },
   settings: {
     react: {

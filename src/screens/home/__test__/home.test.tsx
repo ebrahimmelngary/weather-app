@@ -22,7 +22,7 @@ describe('Home component', () => {
   });
 
   it('displays the weather status', () => {
-    const {getByTestId, getByText} = render(<Home />);
+    const {getByTestId} = render(<Home />);
     expect(getByTestId('weather')).toBeDefined();
     expect(getByTestId('weatherImage')).toBeDefined();
   });

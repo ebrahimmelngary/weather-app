@@ -1,4 +1,5 @@
 import {AxiosResponse} from 'axios';
+
 import {SearchResponse} from '../../types';
 
 export const MockResponse: Promise<AxiosResponse<SearchResponse>> =
