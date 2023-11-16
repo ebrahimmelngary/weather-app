@@ -26,13 +26,13 @@ const Home = () => {
         <Text style={styles.headerTextStyle} testID="weather">
           Weather
         </Text>
+        <Input
+          testID="inputId"
+          value={searchText}
+          placeholder="Search for a city"
+          onChangeText={setSearchText}
+        />
       </View>
-      <Input
-        testID="inputId"
-        value={searchText}
-        placeholder="Search for a city"
-        onChangeText={setSearchText}
-      />
 
       {isLoading ? (
         <ActivityIndicator

@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import {COLORS} from '../../common/colors';
+import { COLORS } from '../../common/colors';
 
 export default StyleSheet.create({
   container: {
@@ -18,15 +18,13 @@ export default StyleSheet.create({
     padding: 16,
   },
   headerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     paddingVertical: 50,
   },
   headerTextStyle: {
     fontWeight: 'bold',
     fontSize: 18,
     color: COLORS.white,
+    marginBottom: 8,
   },
   hourTextStyle: {
     color: COLORS.white,
