@@ -36,9 +36,6 @@ exports[`Home component should match snapshot 1`] = `
   <View
     style={
       {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
         "paddingVertical": 50,
       }
     }
@@ -49,26 +46,27 @@ exports[`Home component should match snapshot 1`] = `
           "color": "#ffffff",
           "fontSize": 18,
           "fontWeight": "bold",
+          "marginBottom": 8,
         }
       }
       testID="weather"
     >
       Weather
     </Text>
-  </View>
-  <TextInput
-    onChangeText={[Function]}
-    placeholder="Search for a city"
-    style={
-      {
-        "backgroundColor": "#ffffff",
-        "borderRadius": 5,
-        "padding": 10,
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Search for a city"
+      style={
+        {
+          "backgroundColor": "#ffffff",
+          "borderRadius": 5,
+          "padding": 10,
+        }
       }
-    }
-    testID="inputId"
-    value=""
-  />
+      testID="inputId"
+      value=""
+    />
+  </View>
   <View
     style={
       {
