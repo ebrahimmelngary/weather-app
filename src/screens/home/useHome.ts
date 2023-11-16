@@ -1,11 +1,11 @@
-import {useCallback, useEffect, useMemo, useState} from 'react';
-import {AxiosResponse} from 'axios';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { AxiosResponse } from 'axios';
 import instance from '../../utils/axios';
-import {useDebounce} from 'use-debounce';
+import { useDebounce } from 'use-debounce';
 import Toast from 'react-native-toast-message';
 
-import {SearchResponse} from '../../types';
-import {Base_URL} from '../../api/api';
+import { SearchResponse } from '../../types';
+import { Base_URL } from '../../api/api';
 
 export const useHome = () => {
   const [searchText, setSearchText] = useState<string>('');
@@ -28,13 +28,13 @@ export const useHome = () => {
       try {
         getCountryResult();
       } catch (error) {
-        Toast.show({text1: error?.message || '', type: 'error'});
+        Toast.show({ text1: error?.message || '', type: 'error' });
       }
       setIsLoading(false);
     }
   }, [debouncedSearchText, getCountryResult, searchText]);
 
-  const resultDates = useMemo(
+  const newResultDates = useMemo(
     () =>
       results?.data?.forecast?.forecastday[0]?.hour?.filter(
         i => new Date(i.time_epoch * 1000).getHours() >= new Date().getHours(),
@@ -47,6 +47,6 @@ export const useHome = () => {
     setSearchText,
     isLoading,
     results,
-    resultDates,
+    resultDates: newResultDates?.slice(0, 5),
   };
 };
