@@ -1,4 +1,3 @@
-
 export const MockData = [
   {
     chance_of_rain: 0,

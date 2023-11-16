@@ -1,13 +1,11 @@
-import { useEffect, useMemo, useState } from "react"
-import { AxiosResponse } from "axios";
-import instance from "../../utils/axios";
-import { useDebounce } from "use-debounce";
-import Toast from "react-native-toast-message";
+import {useEffect, useMemo, useState} from 'react';
+import {AxiosResponse} from 'axios';
+import instance from '../../utils/axios';
+import {useDebounce} from 'use-debounce';
+import Toast from 'react-native-toast-message';
 
-import { SearchResponse } from "../../types";
-import { Base_URL } from "../../api/api";
-
-
+import {SearchResponse} from '../../types';
+import {Base_URL} from '../../api/api';
 
 export const useHome = () => {
   const [searchText, setSearchText] = useState<string>('');
@@ -16,20 +14,18 @@ export const useHome = () => {
 
   const [debouncedSearchText] = useDebounce(searchText, 500);
 
-  const getCountryResult = async (
-    searchText: string,
-  ) =>
-    await instance.get(`${Base_URL}&q=${searchText}`).then(
-      (res: AxiosResponse<SearchResponse>) => setResults(res),
-    );
+  const getCountryResult = async (searchText: string) =>
+    await instance
+      .get(`${Base_URL}&q=${searchText}`)
+      .then((res: AxiosResponse<SearchResponse>) => setResults(res));
 
   useEffect(() => {
     if (debouncedSearchText && debouncedSearchText?.length > 2) {
       setIsLoading(true);
       try {
-        getCountryResult(searchText)
+        getCountryResult(searchText);
       } catch (error) {
-        Toast.show({ text1: error?.message || '', type: 'error' });
+        Toast.show({text1: error?.message || '', type: 'error'});
       }
       setIsLoading(false);
     }
@@ -48,6 +44,6 @@ export const useHome = () => {
     setSearchText,
     isLoading,
     results,
-    resultDates
-  }
-}
+    resultDates,
+  };
+};

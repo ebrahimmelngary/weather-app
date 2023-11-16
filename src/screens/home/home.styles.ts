@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { COLORS } from '../../common/colors';
+import {StyleSheet} from 'react-native';
+import {COLORS} from '../../common/colors';
 
 export default StyleSheet.create({
   container: {
@@ -42,7 +42,7 @@ export default StyleSheet.create({
   },
   countryContainer: {
     padding: 16,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   countryTextStyle: {
     fontWeight: '500',
@@ -57,6 +57,6 @@ export default StyleSheet.create({
     color: COLORS.white,
   },
   loaderStyle: {
-    top: 25
+    top: 25,
   },
 });

@@ -1,6 +1,5 @@
-import { StyleSheet } from "react-native";
-import { COLORS } from "../../common/colors";
-
+import {StyleSheet} from 'react-native';
+import {COLORS} from '../../common/colors';
 
 export default StyleSheet.create({
   imageStyle: {
@@ -12,11 +11,11 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     marginBottom: 16,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 8,
   },
   columnWrapperStyle: {
     justifyContent: 'space-around',
-  }
+  },
 });
